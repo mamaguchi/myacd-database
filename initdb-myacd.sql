@@ -55,10 +55,7 @@ create table acd.people
     name text not null,    
     dob date,
     tel text,
-    address text, 
-    locality text,
-    district text,
-    state state_t,
+    address text,    
     comorbid text,                      
 
     unique(ident)
@@ -83,12 +80,9 @@ create table acd.house
     acd text references acd.profile(name),
     tarikhacd date,
     bilrumahk integer default 0,
-    bilrumahp integer default 0,
-    locality text,
-    district text,
-    state state_t,
+    bilrumahp integer default 0,    
     
-    unique(tarikhacd, locality)  
+    unique(acd, tarikhacd)  
   );
   
   
